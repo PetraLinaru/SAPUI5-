@@ -15,10 +15,11 @@
         "description":"{{appDescription}}",
 
         "dataSources": {
-            "<dataSourceAlias>": {
-                "uri": "<uri>",
+            "InvoiceRemote": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/",
+                "type":"OData",
                 "settings": {
-                    "localUri": "<localUri>"
+                    "ODataVersion":"2.0"
                 }
             }
         }
@@ -67,8 +68,7 @@
         },
         "models": {
             "invoice":{
-                "type":"sap.ui.model.json.JSONModel",
-                "uri":"Invoices.json"
+                "dataSource":"invoiceRemote"
             },
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
